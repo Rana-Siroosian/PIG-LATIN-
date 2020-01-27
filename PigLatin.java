@@ -51,17 +51,14 @@ public class PigLatin {
 	    	
 	    	while (i<s.length()) {
 	 
-	      // Take care of punctuation and spaces
 	    		while (i<s.length() && !isLetter(s.charAt(i))) {
 	    			
 	    			latin = latin + s.charAt(i);
 	    			i++;
 	    		}
 	 
-	      // If there aren't any words left, stop.
 	      if (i>=s.length()) break;
 	 
-	      // Otherwise we're at the beginning of a word.
 	      int begin = i;
 	      
 	      while (i<s.length() && isLetter(s.charAt(i))) {
@@ -69,7 +66,6 @@ public class PigLatin {
 	        i++;
 	      }
 	 
-	      // Now we're at the end of a word, so translate it.
 	      int end = i;
 	      latin = latin + pigWord(s.substring(begin, end));
 	      
